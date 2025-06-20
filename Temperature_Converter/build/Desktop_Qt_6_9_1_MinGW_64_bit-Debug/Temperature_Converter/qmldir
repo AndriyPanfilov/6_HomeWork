@@ -1,5 +1,0 @@
-module Temperature_Converter
-typeinfo appTemperature_Converter.qmltypes
-prefer :/qt/qml/Temperature_Converter/
-Main 1.0 Main.qml
-
