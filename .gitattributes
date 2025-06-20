@@ -1,0 +1,11 @@
+# Примусове використання LF для всіх текстових файлів
+* text=auto eol=lf
+#
+* text=auto
+
+#
+*.png binary
+*.jpg binary
+*.ico binary
+*.exe binary
+*.dll binary

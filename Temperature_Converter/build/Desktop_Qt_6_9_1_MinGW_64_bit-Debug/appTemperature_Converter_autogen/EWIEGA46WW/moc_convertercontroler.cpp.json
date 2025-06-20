@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "ConverterControler",
+            "lineNumber": 6,
+            "object": true,
+            "qualifiedClassName": "ConverterControler",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "convertercontroler.h",
+    "outputRevision": 69
+}

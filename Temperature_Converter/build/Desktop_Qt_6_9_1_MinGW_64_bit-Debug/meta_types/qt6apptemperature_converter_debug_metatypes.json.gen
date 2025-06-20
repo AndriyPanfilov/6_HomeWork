@@ -1,0 +1,285 @@
+[
+    {
+        "classes": [
+            {
+                "className": "ConverterController",
+                "lineNumber": 7,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Strvalue",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "updateCelsius",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Strvalue",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "updateFahrenheit",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Strvalue",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 8,
+                        "name": "updateKelvin",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "celsiusValid",
+                        "notify": "celsiusValidationChanged",
+                        "read": "celsiusValid",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "kelvinValid",
+                        "notify": "kelvinValidationChanged",
+                        "read": "kelvinValid",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "fahrenheitValid",
+                        "notify": "fahrenheitValidationChanged",
+                        "read": "fahrenheitValid",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "d_celsius",
+                        "notify": "celsiusChanged",
+                        "read": "get_celsius",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "name": "d_fahrenheit",
+                        "notify": "fahrenheitChanged",
+                        "read": "get_fahrenheit",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 5,
+                        "name": "d_kelvin",
+                        "notify": "kelvinChanged",
+                        "read": "get_kelvin",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "ConverterController",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "celsiusChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "fahrenheitChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "kelvinChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "isValid",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "celsiusValidationChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "isValid",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "fahrenheitValidationChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "isValid",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "kelvinValidationChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "convertercontroller.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "ConverterModel",
+                "lineNumber": 6,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": true,
+                        "index": 0,
+                        "name": "d_celsius",
+                        "notify": "celsiusChanged",
+                        "read": "get_celsius",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "write": "set_celsius"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": true,
+                        "index": 1,
+                        "name": "d_fahrenheit",
+                        "notify": "fahrenheitChanged",
+                        "read": "get_fahrenheit",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "write": "set_fahrenheit"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": true,
+                        "index": 2,
+                        "name": "d_kelvin",
+                        "notify": "kelvinChanged",
+                        "read": "get_kelvin",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "write": "set_kelvin"
+                    }
+                ],
+                "qualifiedClassName": "ConverterModel",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "celsiusChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "fahrenheitChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "kelvinChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "convertermodel.h",
+        "outputRevision": 69
+    }
+]

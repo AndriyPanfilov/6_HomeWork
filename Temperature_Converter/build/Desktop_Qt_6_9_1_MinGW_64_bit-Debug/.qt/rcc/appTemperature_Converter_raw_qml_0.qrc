@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/Temperature_Converter/">
+    <file alias="Main.qml">D:/1_Programming/Hellil IT shcool/Home_Work/6_HomeWork/Temperature_Converter/Main.qml</file>
+  </qresource>
+</RCC>
+
