@@ -10,6 +10,9 @@ Window {
     color:"#dcdcdc"
     title: qsTr("Temperature Converter")
 
+    // property bool ctrlReady: controller !== null
+    property bool ctrlReady: controller !== null && controller !== undefined
+
     ColumnLayout {
         id:idColumn
         anchors.centerIn: parent
@@ -40,12 +43,17 @@ Window {
                 maximumLength: idColumn.max_Length
                 placeholderText: "Celsius temperatura"
 
-                text: controller.d_celsius.toString()
-                onTextChanged: controller.updateCelsius(text)
+
+                text: ctrlReady ? controller.d_celsius.toString() : ""
+                 onTextChanged: {
+                  if (ctrlReady) controller.updateCelsius(text)
+                }
+
 
                 background: Rectangle {
                     border.width: 1
-                    border.color: controller.celsiusValid ? "gray" : "red"
+                  //  border.color: ctrlReady ? (controller.celsiusValid ? "gray" : "red") : "gray"
+                     border.color: controller !== null && controller.celsiusValid  ? "gray" : "red"
                     color: "white"
                 }
             }
@@ -69,12 +77,17 @@ Window {
                 maximumLength: idColumn.max_Length
                 placeholderText: "Fahrenheit temperatura"
 
-                text: controller.d_fahrenheit.toString()
-                onTextChanged: controller.updateFahrenheit(text)
+
+                text: ctrlReady ? controller.d_fahrenheit.toString() : ""
+                     onTextChanged: {
+                    if (ctrlReady) controller.updateFahrenheit(text)
+                }
+
 
                 background: Rectangle {
                     border.width: 1
-                    border.color: controller.fahrenheitValid ? "gray" : "red"
+                   // border.color: ctrlReady ? (controller.fahrenheitValid ? "gray" : "red") : "gray"
+                    border.color: controller !== null && controller.fahrenheitValid ? "gray" : "red"
                     color: "white"
                 }
             }
@@ -98,12 +111,17 @@ Window {
                 maximumLength: idColumn.max_Length
                 placeholderText: "Kelvin temperatura"
 
-                text: controller.d_kelvin.toString()
-                onTextChanged: controller.updateKelvin(text)
+
+
+                text: ctrlReady ? controller.d_kelvin.toString() : ""
+                onTextChanged: {
+                    if (ctrlReady) controller.updateKelvin(text)
+                }
 
                 background: Rectangle {
                     border.width: 1
-                    border.color: controller.kelvinValid ? "gray" : "red"
+                   // border.color: controller.kelvinValid ? "gray" : "red"
+                    border.color: controller !== null && controller.kelvinValid ? "gray" : "red"
                     color: "white"
                 }
             }
@@ -119,34 +137,44 @@ Window {
         Text {
 
             color: "red"
-            visible: !controller.celsiusValid
-            text: "Temperature cannot be below absolute zero (-273.15 °C)"
+            visible: ctrlReady && !controller.celsiusValid
+            text: "Invalid input type or \nTemperature cannot be below absolute zero (-273.15 °C)"
             font.pixelSize: 12
             anchors.left: parent.left
             anchors.leftMargin: 10  // отступ зліва 10 пікселів
-            anchors.verticalCenter: parent.verticalCenter
+
+            anchors.top: parent.top
+            anchors.topMargin: 5       // Відступ зверху 5 пікселів
         }
 
         Text {
 
             color: "red"
-            visible: !controller.fahrenheitValid
-            text: "Temperature cannot be below absolute zero (−459.67 °F)"
+            visible: ctrlReady && !controller.fahrenheitValid
+            text: "Invalid input type or \nTemperature cannot be below absolute zero (−459.67 °F)"
             font.pixelSize: 12
             anchors.left: parent.left
             anchors.leftMargin: 10  // отступ зліва 10 пікселів
-            anchors.verticalCenter: parent.verticalCenter
+
+            anchors.top: parent.top
+            anchors.topMargin: 5       // Відступ зверху 5 пікселів
         }
 
         Text {
 
             color: "red"
-            visible: !controller.kelvinValid
-            text: "Temperature cannot be below absolute zero (0 °K)"
+            visible: ctrlReady &&  !controller.kelvinValid
+            text: "Invalid input type or \nTemperature cannot be below absolute zero (0 °K)"
+
+            wrapMode: Text.Wrap
+            width: 300
+
             font.pixelSize: 12
             anchors.left: parent.left
-            anchors.leftMargin: 10  // отступ зліва 10 пікселів
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.leftMargin: 10  // Відступ зліва 10 пікселів
+
+            anchors.top: parent.top
+            anchors.topMargin: 5       // Відступ зверху 5 пікселів
         }
     }
 }

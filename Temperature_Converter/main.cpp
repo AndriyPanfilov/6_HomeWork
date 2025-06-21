@@ -2,12 +2,14 @@
 #include <QQmlApplicationEngine>
 #include"convertercontroller.h"
 #include <QQmlContext>
+#include <QQuickStyle>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-
+    QQuickStyle::setStyle("Fusion");
     QQmlApplicationEngine engine;
+
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
@@ -18,9 +20,8 @@ int main(int argc, char *argv[])
     ConverterModel model;
     ConverterController controlTemp {&model};
 
-   // engine.loadFromModule("Temperature_Converter", "Main");
-    engine.rootContext()->setContextProperty("controller", &controlTemp);
 
+    engine.rootContext()->setContextProperty("controller", &controlTemp);
     engine.loadFromModule("Temperature_Converter", "Main");
 
     if (engine.rootObjects().isEmpty())

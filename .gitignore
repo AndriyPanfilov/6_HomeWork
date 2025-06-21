@@ -7,6 +7,7 @@
 *.creator.user
 
 # Build directories
+Temperature_Converter/build/
 build-*/
 _build-*/
 

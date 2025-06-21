@@ -1,5 +1,4 @@
 #include "convertercontroller.h"
-#include<QDebug>
 
 ConverterController::ConverterController(ConverterModel *model, QObject *parent)
     : QObject(parent), model(model)
@@ -11,7 +10,6 @@ ConverterController::ConverterController(ConverterModel *model, QObject *parent)
 }
 
 void ConverterController::updateCelsius(const QString &QStrCelsius){
-    qDebug() << "Користувачем введенно:" << QStrCelsius;
 
     if (QStrCelsius.trimmed().isEmpty()) {
         // Порожнє поле вважається валідним
