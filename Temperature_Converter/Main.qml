@@ -10,7 +10,6 @@ Window {
     color:"#dcdcdc"
     title: qsTr("Temperature Converter")
 
-    // property bool ctrlReady: controller !== null
     property bool ctrlReady: controller !== null && controller !== undefined
 
     ColumnLayout {
@@ -34,8 +33,10 @@ Window {
             Label{
                 text:"Celsius"
                 font.pointSize: idColumn.fontSizeLabel
+                color: "black"
             }
             TextField {
+                color: "black"
                 Layout.preferredWidth: idColumn.field_Width
                 font.pointSize: idColumn.fontSizeField
                 leftPadding:idColumn.l_Padding
@@ -68,8 +69,10 @@ Window {
             Label{
                 text:"Fahrenheit"
                 font.pointSize: idColumn.fontSizeLabel
+                color: "black"
             }
             TextField {
+                color: "black"
                 Layout.preferredWidth: idColumn.field_Width
                 font.pointSize: idColumn.fontSizeField
                 leftPadding:idColumn.l_Padding
@@ -86,7 +89,6 @@ Window {
 
                 background: Rectangle {
                     border.width: 1
-                   // border.color: ctrlReady ? (controller.fahrenheitValid ? "gray" : "red") : "gray"
                     border.color: controller !== null && controller.fahrenheitValid ? "gray" : "red"
                     color: "white"
                 }
@@ -102,8 +104,10 @@ Window {
             Label{
                 text:"Kelvin"
                 font.pointSize: idColumn.fontSizeLabel
+                color: "black"
             }
             TextField {
+                color: "black"
                 Layout.preferredWidth: idColumn.field_Width
                 font.pointSize: idColumn.fontSizeField
                 leftPadding:idColumn.l_Padding
@@ -119,8 +123,7 @@ Window {
                 }
 
                 background: Rectangle {
-                    border.width: 1
-                   // border.color: controller.kelvinValid ? "gray" : "red"
+                    border.width: 1                  
                     border.color: controller !== null && controller.kelvinValid ? "gray" : "red"
                     color: "white"
                 }
